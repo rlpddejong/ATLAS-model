@@ -1,0 +1,83 @@
+# Model configuration
+model:
+  class_path: training.mask_classification_semantic.MaskClassificationSemantic
+  init_args:
+    network:
+      class_path: models.atlas.ATLAS
+      init_args:
+        encoder:
+          class_path: models.vit.ViT
+          init_args:
+            img_size: [256, 256]
+            backbone_name: facebook/dinov3-vitl16-pretrain-lvd1689m
+            ckpt_path: null
+            pixel_mean: [0.46888983, 0.29536288, 0.28712815]
+            pixel_std: [0.24689102, 0.21034359, 0.21188641]
+        num_classes: 30
+        num_q: 100
+        num_blocks: 4
+        masked_attn_enabled: true
+        num_procedures: 14
+        num_proc_q: 1
+        phase_num_tokens: 4
+        phase_contrastive_dim: 256
+        temporal_query_learning_enabled: true
+    img_size: [256, 256]
+    num_classes: 30
+    attn_mask_annealing_enabled: true
+    attn_mask_annealing_start_steps: [500, 1000, 1500, 2000]
+    attn_mask_annealing_end_steps: [10000, 10000, 10000, 10000]
+    num_procedures: 14
+    procedure_coefficient: 1.0
+    lr: 1.0e-4
+    llrd: 0.8
+    llrd_l2_enabled: true
+    lr_mult: 1.0
+    weight_decay: 0.05
+    num_points: 12544
+    oversample_ratio: 3.0
+    importance_sample_ratio: 0.75
+    poly_power: 0.9
+    warmup_steps: [500, 1000]
+    no_object_coefficient: 0.1
+    mask_coefficient: 5.0
+    dice_coefficient: 5.0
+    class_coefficient: 2.0
+    mask_thresh: 0.8
+    overlap_thresh: 0.8
+    ignore_idx: 255
+    ckpt_path: null
+    delta_weights: false
+    load_ckpt_class_head: false
+    phase_contrastive_enabled: true
+    contrastive_coefficient: 0.1
+    contrastive_temperature: 0.07
+    contrastive_pos_radius: 5 # 1
+
+# Data configuration
+data:
+  class_path: datasets.atlas_semantic.ATLASSemantic
+  init_args:
+    path: path/to/atlas.zip
+    num_workers: 4
+    batch_size: 16
+    img_size: [256, 256]
+    num_classes: 30
+    color_jitter_enabled: true
+    scale_range: [0.5, 2.0]
+    check_empty_targets: true
+    clip_length: 5
+    clip_stride: 1
+    val_clip_length: 5
+
+trainer:
+  max_epochs: 3
+  precision: 16-mixed
+  enable_model_summary: false
+  devices: 1
+  gradient_clip_val: 0.01
+  gradient_clip_algorithm: norm
+  log_every_n_steps: 10
+
+seed_everything: 0
+compile_disabled: false
