@@ -133,8 +133,8 @@ python utils/extract_model_weights.py /path/to/checkpoint.ckpt
 The weights of the ATLAS model trained on the ATLAS-120k dataset can be found below.
 
 | Model | Download |
-|-------------------|
+|-------|----------|
 | **ATLAS ViT-s** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vits_val_iou_all%3D0.2806.ckpt?download=true) |
-| **ATLAS ViT-b** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vitl_val_iou_all%3D0.3837.ckpt?download=true) |
-| **ATLAS ViT-l** | [Download](https://huggingface.co/rlpddejong/ATLAS-pretraining-weights/resolve/main/DINOv1-vitb-224-surgenet2M.pth?download=true) |
+| **ATLAS ViT-b** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vitb_val_iou_all%3D0.3498.ckpt?download=true) |
+| **ATLAS ViT-l** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vitl_val_iou_all%3D0.3837.ckpt?download=true) |
 
