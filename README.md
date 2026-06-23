@@ -138,3 +138,18 @@ The weights of the ATLAS model trained on the ATLAS-120k dataset can be found be
 | **ATLAS ViT-b** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vitb_val_iou_all%3D0.3498.ckpt?download=true) |
 | **ATLAS ViT-l** | [Download](https://huggingface.co/rlpddejong/ATLAS-finetuned-weights/resolve/main/ATLAS_vitl_val_iou_all%3D0.3837.ckpt?download=true) |
 
+## Citation
+
+If you use ATLAS-120k in your research, please cite:
+
+```bibtex
+@misc{dejong2026atlas,
+      title={Surgical Anatomy Recognition with Context Learning using Foundation Representations}, 
+      author={Ronald L. P. D. de Jong and Tim J. M. Jaspers and Raf A. H. Vervoort and Aron F. H. A. Bakker and Yiping Li and Jip L. Tolenaar and Jelle P. Ruurda and Willem M. Brinkman and Josien P. W. Pluim and Marcel Breeuwer and Daan de Geus and Fons van der Sommen},
+      year={2026},
+      eprint={2606.22124},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.22124}, 
+}
+```
